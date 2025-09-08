@@ -1,4 +1,4 @@
-package com.sprint2_implementation.utilities;
+package com.myFleet.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;

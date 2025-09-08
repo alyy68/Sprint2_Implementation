@@ -1,7 +1,7 @@
-package com.sprint2_implementation.step_definitions;
+package com.myFleet.step_definitions;
 
-import com.sprint2_implementation.pages.LoginPage;
-import com.sprint2_implementation.utilities.ConfigurationReader;
+import com.myFleet.pages.LoginPage;
+import com.myFleet.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 public class LoginStepDefs {
 

@@ -1,4 +1,4 @@
-package com.sprint2_implementation.runners;
+package com.myFleet.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features",
-        glue = "com/sprint2_implementation/step_definitions",
+        glue = "com/myFleet/step_definitions",
         dryRun = false,
         tags = "@wip",
         publish = true //generating a report with public link

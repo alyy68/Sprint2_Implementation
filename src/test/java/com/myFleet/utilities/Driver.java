@@ -1,4 +1,4 @@
-package com.sprint2_implementation.utilities;
+package com.myFleet.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

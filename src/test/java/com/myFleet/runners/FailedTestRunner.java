@@ -1,4 +1,4 @@
-package com.sprint2_implementation.runners;
+package com.myFleet.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "@target/rerun.txt",
-        glue = "com/sprint2_implementation/step_definitions"
+        glue = "com/myFleet/step_definitions"
 )
 public class FailedTestRunner {
 }

@@ -1,11 +1,11 @@
-package com.sprint2_implementation.step_definitions;
+package com.myFleet.step_definitions;
 
 
 
 
-import com.sprint2_implementation.utilities.BrowserUtils;
-import com.sprint2_implementation.utilities.ConfigurationReader;
-import com.sprint2_implementation.utilities.Driver;
+import com.myFleet.utilities.BrowserUtils;
+import com.myFleet.utilities.ConfigurationReader;
+import com.myFleet.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

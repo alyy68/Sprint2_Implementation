@@ -1,7 +1,7 @@
-package com.sprint2_implementation.pages;
+package com.myFleet.pages;
 
 
-import com.sprint2_implementation.utilities.Driver;
+import com.myFleet.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
