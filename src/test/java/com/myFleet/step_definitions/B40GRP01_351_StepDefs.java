@@ -1,6 +1,7 @@
 package com.myFleet.step_definitions;
 
 import com.myFleet.pages.HomePage_ali;
+import com.myFleet.pages.VehicleCostsPage_ali;
 import com.myFleet.utilities.BrowserUtils;
 import com.myFleet.utilities.Driver;
 import io.cucumber.java.PendingException;
@@ -19,6 +20,7 @@ import java.util.List;
 public class B40GRP01_351_StepDefs {
 
     HomePage_ali homePage = new HomePage_ali();
+    VehicleCostsPage_ali vehicleCosts = new VehicleCostsPage_ali();
 
     @When("user presses Vehicles Costs module under Fleet tab")
     public void userPressesVehiclesCostsModuleUnderFleetTab() {
@@ -31,7 +33,7 @@ public class B40GRP01_351_StepDefs {
     }
     @Then("user should see three columns")
     public void user_should_see_three_columns(List<String> expectedColumns) {
-        Assert.assertEquals(expectedColumns, homePage.loopForColumns());
+        Assert.assertEquals(expectedColumns, vehicleCosts.loopForColumns());
     }
 
 
