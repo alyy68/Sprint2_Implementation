@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public abstract class BasePage {
+public class BasePage {
 
     @FindBy(css = "span.title-level-1")
     public List<WebElement> menuOptions;
