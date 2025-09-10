@@ -2,6 +2,8 @@ package com.myFleet.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,9 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class BrowserUtils {
 
@@ -51,7 +51,7 @@ public class BrowserUtils {
     }
 
     public static void verifyTitle(String expectedTitle){
-        Assert.assertEquals(Driver.getDriver().getTitle(), expectedTitle);
+        Assert.assertEquals(expectedTitle, Driver.getDriver().getTitle());
     }
     public static void verifyTitleContains( String expectedInTitle){
         Assert.assertTrue(Driver.getDriver().getTitle().contains(expectedInTitle));
@@ -482,6 +482,23 @@ public class BrowserUtils {
      */
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time)).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+
+    public static ChromeOptions getChromeOptions() {
+        // disable password manager completely
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", prefs);
+
+        // 🔑 disable all password-related features
+        options.addArguments("--disable-features=PasswordLeakDetection,PasswordCheck,PasswordImport,PasswordManagerOnboarding");
+        options.addArguments("--disable-save-password-bubble");
+        options.addArguments("--incognito"); // run clean, no saved creds
+
+        return options;
     }
 
 
