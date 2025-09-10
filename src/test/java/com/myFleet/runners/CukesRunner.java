@@ -6,17 +6,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {
-                "html:target/cucumber-reports.html",
-                "rerun:target/rerun.txt",
-                "me.jvt.cucumber.report.PrettyReports:target/cucumber"
-        },
+        plugin = "html:target/cucumber-reports.html",
         features = "src/test/resources/features",
         glue = "com/myFleet/step_definitions",
-        dryRun =false,
-        tags = "@alina",
+        dryRun = false,
+        tags = "@ali",
         publish = true //generating a report with public link
 )
-public class CukesRunner {}
+public class CukesRunner {
+}
 
 
