@@ -22,6 +22,9 @@ public class BasePage_AN extends BasePage {
     @FindBy(xpath = "//span[.='Calendar Events']")
     public WebElement calendarEventsButton;
 
+    @FindBy(xpath = "//i[@title='Get help']")
+    public WebElement questionIcon;
+
 
 }
 
