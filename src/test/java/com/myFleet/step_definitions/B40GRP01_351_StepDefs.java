@@ -1,6 +1,7 @@
 package com.myFleet.step_definitions;
 
 import com.myFleet.pages.HomePage_ali;
+import com.myFleet.pages.VehicleCostsPage_ali;
 import com.myFleet.utilities.BrowserUtils;
 import com.myFleet.utilities.Driver;
 import io.cucumber.java.PendingException;
@@ -19,21 +20,31 @@ import java.util.List;
 public class B40GRP01_351_StepDefs {
 
     HomePage_ali homePage = new HomePage_ali();
+    VehicleCostsPage_ali vehicleCosts = new VehicleCostsPage_ali();
 
     @When("user presses Vehicles Costs module under Fleet tab")
     public void userPressesVehiclesCostsModuleUnderFleetTab() {
         homePage.navigateToModule("Fleet", "Vehicle Costs");
     }
+
     @When("user should see Vehicles Costs page")
     public void user_should_see_vehicles_costs_page() {
         BrowserUtils.waitForTitleContains("All");
         BrowserUtils.verifyTitleContains("Vehicle Costs");
     }
+
     @Then("user should see three columns")
     public void user_should_see_three_columns(List<String> expectedColumns) {
-        Assert.assertEquals(expectedColumns, homePage.loopForColumns());
+        Assert.assertEquals(expectedColumns, vehicleCosts.loopForColumns());
     }
 
+    @Then("user should select first checkbox")
+    public void userShouldSelectFirstCheckbox() {
+        vehicleCosts.firstCheckbox.click();
+    }
 
-
+    @Then("user should see all checkboxes is selected")
+    public void userShouldSeeAllCheckboxesIsSelected() {
+        Assert.assertTrue(vehicleCosts.list());
+    }
 }
