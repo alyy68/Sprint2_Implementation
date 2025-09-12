@@ -1,8 +1,11 @@
 package com.myFleet.pages;
 
+import com.myFleet.utilities.BrowserUtils;
 import com.myFleet.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
@@ -26,4 +29,20 @@ public class VehicleCostsPage_ali {
         }
         return columnNames;
     }
+
+    @FindBy(xpath = "//thead//input")
+    public WebElement firstCheckbox;
+
+
+
+    public boolean list() {
+        List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//table/tbody/tr//input"));
+        for (WebElement each : rows) {
+            if (!each.isSelected()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

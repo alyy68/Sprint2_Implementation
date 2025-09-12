@@ -26,16 +26,25 @@ public class B40GRP01_351_StepDefs {
     public void userPressesVehiclesCostsModuleUnderFleetTab() {
         homePage.navigateToModule("Fleet", "Vehicle Costs");
     }
+
     @When("user should see Vehicles Costs page")
     public void user_should_see_vehicles_costs_page() {
         BrowserUtils.waitForTitleContains("All");
         BrowserUtils.verifyTitleContains("Vehicle Costs");
     }
+
     @Then("user should see three columns")
     public void user_should_see_three_columns(List<String> expectedColumns) {
         Assert.assertEquals(expectedColumns, vehicleCosts.loopForColumns());
     }
 
+    @Then("user should select first checkbox")
+    public void userShouldSelectFirstCheckbox() {
+        vehicleCosts.firstCheckbox.click();
+    }
 
-
+    @Then("user should see all checkboxes is selected")
+    public void userShouldSeeAllCheckboxesIsSelected() {
+        Assert.assertTrue(vehicleCosts.list());
+    }
 }
