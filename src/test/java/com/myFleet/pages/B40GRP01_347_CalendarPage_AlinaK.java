@@ -2,14 +2,12 @@ package com.myFleet.pages;
 
 import com.myFleet.utilities.BrowserUtils;
 import com.myFleet.utilities.Driver;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.Browser;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class B40GRP01_347_CalendarPage extends BasePage {
-    public B40GRP01_347_CalendarPage() {
+public class B40GRP01_347_CalendarPage_AlinaK extends BasePage {
+    public B40GRP01_347_CalendarPage_AlinaK() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -28,7 +26,7 @@ public class B40GRP01_347_CalendarPage extends BasePage {
     @FindBy(xpath = "//input[@class='recurrence-subview-control__number'][1]")
     public WebElement inputField;
 
-    @FindBy(xpath = "//span[text()='The value have not to be less than 1.']")
+    @FindBy(xpath = "//span[contains(@id,'temp-validation-name')]")
     public WebElement errorMessage;
 
 
