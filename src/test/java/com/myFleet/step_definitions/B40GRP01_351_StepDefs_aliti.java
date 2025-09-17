@@ -1,26 +1,18 @@
 package com.myFleet.step_definitions;
 
-import com.myFleet.pages.HomePage_ali;
-import com.myFleet.pages.VehicleCostsPage_ali;
+import com.myFleet.pages.HomePage_aliti;
+import com.myFleet.pages.VehicleCostsPage_aliti;
 import com.myFleet.utilities.BrowserUtils;
-import com.myFleet.utilities.Driver;
-import io.cucumber.java.PendingException;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
-public class B40GRP01_351_StepDefs {
+public class B40GRP01_351_StepDefs_aliti {
 
-    HomePage_ali homePage = new HomePage_ali();
-    VehicleCostsPage_ali vehicleCosts = new VehicleCostsPage_ali();
+    HomePage_aliti homePage = new HomePage_aliti();
+    VehicleCostsPage_aliti vehicleCosts = new VehicleCostsPage_aliti();
 
     @When("user presses Vehicles Costs module under Fleet tab")
     public void userPressesVehiclesCostsModuleUnderFleetTab() {
