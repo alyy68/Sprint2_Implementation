@@ -6,8 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class B40GRP01_347_CalendarPage_AlinaK extends BasePage {
-    public B40GRP01_347_CalendarPage_AlinaK() {
+public class CalendarPage_AlinaK extends BasePage {
+    public CalendarPage_AlinaK() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
