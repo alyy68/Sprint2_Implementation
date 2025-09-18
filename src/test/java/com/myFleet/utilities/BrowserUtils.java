@@ -501,5 +501,33 @@ public class BrowserUtils {
         return options;
     }
 
+    public static boolean isCheckboxesSelected(String checkboxLocator, boolean check) {
+
+        List<WebElement> rows = Driver.getDriver().findElements(By.xpath(checkboxLocator));
+        for (WebElement each : rows) {
+            if (check) {
+                if (!each.isSelected()) {
+                    return false;
+                }
+            } else {
+                if (each.isSelected()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean randomCheckbox(String checkBoxLocator, int howOften) {
+        List<WebElement> randomSelect = Driver.getDriver().findElements(By.xpath(checkBoxLocator));
+        for (int i = 0; i < randomSelect.size(); i+=howOften) {
+            randomSelect.get(i).click();
+            if (!randomSelect.get(i).isSelected()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 }
