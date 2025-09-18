@@ -18,7 +18,6 @@ Feature:  As a user, (Store and Sales managers) I want to manage filters on the 
       | store manager |
       | sales manager |
 
-  @ali
   Scenario Outline: Verify that users can check the first checkbox to select All Vehicle Costs
     Given the user logged in as "<userType>"
     When user presses Vehicles Costs module under Fleet tab

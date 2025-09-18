@@ -1,8 +1,6 @@
 package com.myFleet.pages;
 
-import com.myFleet.utilities.BrowserUtils;
 import com.myFleet.utilities.Driver;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,11 +9,17 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VehicleCostsPage_ali {
+public class HomePage_aliti extends BasePage {
 
-    public VehicleCostsPage_ali() {
+    public HomePage_aliti() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    @FindBy(xpath = "(//li[@class='dropdown dropdown-level-1']/a/span)[1]")
+    public WebElement fleetButton;
+
+    @FindBy(xpath = "//span[text()='Vehicle Costs']")
+    public WebElement vehicleCostsButton;
 
     public List<String> loopForColumns() {
         List<WebElement> columnElements = new ArrayList<>();
@@ -30,19 +34,6 @@ public class VehicleCostsPage_ali {
         return columnNames;
     }
 
-    @FindBy(xpath = "//thead//input")
-    public WebElement firstCheckbox;
 
-
-
-    public boolean list() {
-        List<WebElement> rows = Driver.getDriver().findElements(By.xpath("//table/tbody/tr//input"));
-        for (WebElement each : rows) {
-            if (!each.isSelected()) {
-                return false;
-            }
-        }
-        return true;
-    }
 
 }
