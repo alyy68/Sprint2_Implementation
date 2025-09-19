@@ -34,6 +34,12 @@ public class HomePage_aliti extends BasePage {
         return columnNames;
     }
 
+    @FindBy(xpath = "//div[text()='You do not have permission to perform this action.']")
+    public WebElement message;
+
+    @FindBy(xpath = "//button[@class='btn-primary']")
+    public WebElement goBackButton;
+
 
 
 }
